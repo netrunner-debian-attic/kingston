@@ -32,6 +32,7 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <QDebug>
+#include <QTimer>
 
 K_PLUGIN_FACTORY(kingston_update_notifier_factory,
                 registerPlugin<kingston_update_notifier_module_t>();
@@ -41,7 +42,7 @@ kingston_update_notifier_module_t::kingston_update_notifier_module_t(QObject* pa
     m_worker(new worker_t(this)), m_listener(new listener_t(this)), m_notifier(new notifier_t(this)) {
   connect(m_listener,SIGNAL(please_check_for_updates()),m_worker,SLOT(check_for_updates()));
   connect(m_worker,SIGNAL(updates_available(int,int)),m_notifier,SLOT(notify_new_updates(int,int)));
-  m_worker->check_for_updates();
+  QTimer::singleShot(2 /*minutes*/ * 60 /*seconds*/ * 1000 /*msec*/,m_worker,SLOT(check_for_updates()) );
 }
 
 
