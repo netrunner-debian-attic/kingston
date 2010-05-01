@@ -39,7 +39,6 @@ K_PLUGIN_FACTORY(kingston_update_notifier_factory,
 K_EXPORT_PLUGIN(kingston_update_notifier_factory("kingston_update_notifier"))
 kingston_update_notifier_module_t::kingston_update_notifier_module_t(QObject* parent, const QList< QVariant >& ): KDEDModule(parent),
     m_worker(new worker_t(this)), m_listener(new listener_t(this)), m_notifier(new notifier_t(this)) {
-  qDebug() << "I'm here! loaded! running! update_notifier";
   connect(m_listener,SIGNAL(please_check_for_updates()),m_worker,SLOT(check_for_updates()));
   connect(m_worker,SIGNAL(updates_available(int,int)),m_notifier,SLOT(notify_new_updates(int,int)));
 }
