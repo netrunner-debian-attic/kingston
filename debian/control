@@ -1,0 +1,13 @@
+Source: kingston-update-notifier
+Section: kde
+Priority: optional
+Maintainer: Sune Vuorela <sune@debian.org>
+Build-Depends: debhelper (>= 7), cmake
+Standards-Version: 3.8.4
+
+Package: update-notifier-kde
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, update-notifier-common
+Description: Update notifier for the KDE Plasma Desktop
+ This package contains a module to notify the user when there is a need for a
+ upgrade or a security upgrade.
