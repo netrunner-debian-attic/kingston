@@ -24,24 +24,27 @@
 
 */
 
-#ifndef NOTIFIER_H
-#define NOTIFIER_H
+#ifndef REBOOT_LISTENER_H
+#define REBOOT_LISTENER_H
 
 #include <QObject>
 
-class KComponentData;
+class KDirWatch;
 class QTimer;
-class notifier_t : public QObject{
+
+class reboot_listener_t : public QObject {
   Q_OBJECT
   public:
-    notifier_t(QObject* parent=0);
+    reboot_listener_t(QObject* parent=0);
+  Q_SIGNALS:
+    void request_reboot();
   public Q_SLOTS:
-    void notify_new_updates(int updates, int security_updates);
-    void notify_reboot();
+    void check_for_reboot();
+  private Q_SLOTS:
+    void directory_changed_slot(const QString& path);
   private:
-    void show_update_notification(const QString& title, const QString& message, const QString& iconname);
-    QTimer* m_reboot_nagger;
-    KComponentData* m_component_data;
+    KDirWatch* m_watcher;
+    QTimer* m_timer;
 };
 
-#endif // NOTIFIER_H
+#endif // REBOOT_LISTENER_H

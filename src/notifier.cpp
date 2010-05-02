@@ -28,12 +28,18 @@
 #include <KIcon>
 #include <QApplication>
 
+#include <QTimer>
 #include <KNotification>
 
 #include <QDebug>
 
+
 notifier_t::notifier_t(QObject* parent): QObject(parent) {
   m_component_data= new KComponentData("kingston_update_notifier");
+  m_reboot_nagger = new QTimer(this);
+  m_reboot_nagger->setSingleShot(true);
+  m_reboot_nagger->setInterval(60/*minutes*/ * 60/*seconds*/ * 1000/*msec*/);
+  connect(m_reboot_nagger,SIGNAL(timeout()),SLOT(notify_reboot()));
 
 }
 
@@ -67,4 +73,14 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
   return;
 }
 
-
+void notifier_t::notify_reboot() {
+  KNotification* note = new KNotification("requestreboot",0L, KNotification::Persistent);
+  note->setTitle("Please reboot your system");
+  note->setText("In order to complete this upgrade, you need to reboot your system");
+  note->setPixmap(KIcon("system-reboot").pixmap(QSize(32,32)));
+  note->setComponentData(*m_component_data);
+  note->setActions(QStringList() << "Later");
+  connect(note,SIGNAL(closed()),m_reboot_nagger,SLOT(start()));
+  connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));
+  note->sendEvent();
+}

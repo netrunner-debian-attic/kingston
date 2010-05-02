@@ -24,28 +24,36 @@
 
 */
 
-#include <QApplication>
-#include "test_window.h"
-#include "worker.h"
-#include "listener.h"
-#include "notifier.h"
 #include "reboot_listener.h"
+#include <QFileSystemWatcher>
+#include <QDebug>
+#include <KDirWatch>
+#include <QTimer>
+#include <QFile>
 
-int main(int argc, char **argv) {
-  QApplication app(argc, argv);
-  test_window_t* test_window = new test_window_t();
-  worker_t* worker = new worker_t();
-  QObject::connect(test_window,SIGNAL(check_for_updates_requested()),worker,SLOT(check_for_updates()));
-  QObject::connect(worker,SIGNAL(updates_available(int,int)),test_window,SLOT(show_new_updates(int,int)));
-  QObject::connect(worker,SIGNAL(error(QString,worker_t::error_code_t)),test_window,SLOT(show_error_message(QString,worker_t::error_code_t)));
-  listener_t* listener = new listener_t();
-  QObject::connect(listener,SIGNAL(please_check_for_updates()),worker,SLOT(check_for_updates()));
-  notifier_t* notifier = new notifier_t();
-  QObject::connect(worker,SIGNAL(updates_available(int,int)),notifier,SLOT(notify_new_updates(int,int)));
-  test_window->show();
-  worker->check_for_updates();
-  reboot_listener_t* reboot_listener = new reboot_listener_t();
-  QObject::connect(reboot_listener,SIGNAL(request_reboot()),notifier,SLOT(notify_reboot()));
-  reboot_listener->check_for_reboot();
-  return app.exec();
+static const QString reboot_required_path = "/var/run/reboot-required";
+
+reboot_listener_t::reboot_listener_t(QObject* parent): QObject(parent) {
+  m_watcher = new KDirWatch(this);
+  m_watcher->addFile(reboot_required_path);
+  connect(m_watcher,SIGNAL(created(QString)),this,SLOT(directory_changed_slot(QString)));
+  m_timer = new QTimer(this);
+  m_timer->setSingleShot(true);
+  m_timer->setInterval(500);
+  connect(m_timer,SIGNAL(timeout()),SIGNAL(request_reboot()));
 }
+void reboot_listener_t::check_for_reboot() {
+  if(QFile::exists(reboot_required_path)) {
+    m_timer->start();
+  }
+}
+
+
+void reboot_listener_t::directory_changed_slot(const QString& path) {
+  if(path==reboot_required_path) {
+     m_timer->start();
+  }
+}
+
+
+

@@ -1,4 +1,4 @@
-set(kingston_SRCS
+set(kingston_SRCS reboot_listener.cpp
    listener.cpp
    notifier.cpp
    worker.cpp
@@ -6,10 +6,10 @@ set(kingston_SRCS
 
 kde4_add_executable(testapp_kingston testapp_main.cpp test_window.cpp ${kingston_SRCS})
 
-target_link_libraries(testapp_kingston ${KDE4_KDEUI_LIBS} )
+target_link_libraries(testapp_kingston ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} )
 
 kde4_add_plugin(kded_kingston_update_notifier kingston_update_notifier_module.cpp ${kingston_SRCS})
-target_link_libraries(kded_kingston_update_notifier ${KDE4_KDEUI_LIBS} )
+target_link_libraries(kded_kingston_update_notifier ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} )
 
 
 ########### install files ###############
