@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Update ontifier
+Name=Update notifier
 Type=Service
 Comment=Notifies user when there is updates available
 X-KDE-ServiceTypes=KDEDModule
