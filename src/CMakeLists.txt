@@ -16,3 +16,4 @@ target_link_libraries(kded_kingston_update_notifier ${KDE4_KDEUI_LIBS} )
 
 install( FILES kingston_update_notifier.desktop  DESTINATION ${SERVICES_INSTALL_DIR}/kded )
 install( TARGETS kded_kingston_update_notifier DESTINATION  ${PLUGIN_INSTALL_DIR})
+install( FILES kingston_update_notifier.notifyrc  DESTINATION  ${DATA_INSTALL_DIR}/kingston_update_notifier )

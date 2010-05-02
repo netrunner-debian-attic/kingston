@@ -1,0 +1,13 @@
+[Global]
+Icon=applications-other
+Comment=Update notification daemon
+Name=Update notification daemon
+
+[Context/info]
+Name=Information
+Comment=Used for update information
+
+[Event/updatesavailable]
+Name=Available updates
+Contexts=info
+Action=Popup

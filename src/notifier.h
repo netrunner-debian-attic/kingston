@@ -29,6 +29,7 @@
 
 #include <QObject>
 
+class KComponentData;
 class KIcon;
 class notifier_t : public QObject{
   Q_OBJECT
@@ -37,7 +38,8 @@ class notifier_t : public QObject{
   public Q_SLOTS:
     void notify_new_updates(int updates, int security_updates);
   private:
-    void show_notification(const QString& title, const QString& message, const QString& iconname);
+    void show_update_notification(const QString& title, const QString& message, const QString& iconname);
+    KComponentData* m_component_data;
 };
 
 #endif // NOTIFIER_H

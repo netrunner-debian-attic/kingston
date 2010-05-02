@@ -25,16 +25,15 @@
 */
 
 #include "notifier.h"
-#include <KPassivePopup>
 #include <KIcon>
 #include <QApplication>
 
-#include <QDBusConnectionInterface>
-#include <QDBusConnection>
-#include <QDBusMessage>
+#include <KNotification>
+
 #include <QDebug>
 
 notifier_t::notifier_t(QObject* parent): QObject(parent) {
+  m_component_data= new KComponentData("kingston_update_notifier");
 
 }
 
@@ -44,56 +43,28 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
   } else {
     QPixmap px;
     if(security_updates==0) {
-      show_notification( "It is recommended to update your system", QString("There is %1 updates available").arg(updates), "dialog-information");
+      show_update_notification( "It is recommended to update your system", QString("There is %1 updates available").arg(updates), "dialog-information");
     } else {
       if(updates==0) {
-        show_notification( "You should update your system", QString("There is %1 security updates available").arg(security_updates), "dialog-warning");
+        show_update_notification( "You should update your system", QString("There is %1 security updates available").arg(security_updates), "dialog-warning");
       } else {
-        show_notification( "You should update your system", QString("There is %1 updates and %2 security updates available").arg(updates).arg(security_updates), "dialog-warning" );
+        show_update_notification( "You should update your system", QString("There is %1 updates and %2 security updates available").arg(updates).arg(security_updates), "dialog-warning" );
       }
     }
       
   }
 }
 
-void notifier_t::show_notification(const QString& title, const QString& message, const QString& iconname) {
-  QDBusConnectionInterface* interface = QDBusConnection::sessionBus().interface();
-  if(!interface) {
-    KPassivePopup::message(title, message, KIcon(iconname).pixmap(QSize(32,32)) ,QApplication::activeWindow(),-1 );
-    return;
-  }
-  QString dbus_service_name("org.freedesktop.Notifications"); 
-  QString dbus_interface_name("org.freedesktop.Notifications");
-  QString dbus_path("/org/freedesktop/Notifications");
-  QString KDE43_SERVICE = "org.kde.VisualNotifications";
-  //kde4.3 doesn't support the fdo notifications
-  if(interface->isServiceRegistered(KDE43_SERVICE)) {
-    dbus_service_name = KDE43_SERVICE;
-    dbus_interface_name = "org.kde.VisualNotifications";
-    dbus_path  = "/VisualNotifications";
-  }
-  if(!interface->isServiceRegistered(dbus_service_name)) {
-    KPassivePopup::message(title, message, KIcon(iconname).pixmap(QSize(32,32)) ,QApplication::activeWindow(),-1 );
-    return;
-  }
-  QDBusMessage dbusmessage = QDBusMessage::createMethodCall(dbus_service_name, dbus_path, dbus_interface_name, "Notify");
-  QList<QVariant> args;
-  args << "Update notification" << 0U;
-  if(KDE43_SERVICE==dbus_service_name) {
-    args << "foo"; //dummy for kde4.3;
-  }
-  args << iconname << title << message << QStringList() << QVariantMap() << 60*1000;
-
-  dbusmessage.setArguments(args);
-  QDBusMessage reply = QDBusConnection::sessionBus().call(dbusmessage);
-  if(reply.type() == QDBusMessage::ReplyMessage) {
-    if(!reply.arguments().isEmpty()) {
-      //success
-      return;
-    }
-  }
-  //fallback
-  KPassivePopup::message(title, message, KIcon(iconname).pixmap(QSize(32,32)) ,QApplication::activeWindow(),60*1000 );
+void notifier_t::show_update_notification(const QString& title, const QString& message, const QString& iconname) {
+  KNotification* note = new KNotification("updatesavailable",0L, KNotification::Persistent);
+  note->setTitle(title);
+  note->setText(message);
+  note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
+  note->setComponentData(*m_component_data);
+  note->setActions(QStringList() << "Later");
+  connect(note,SIGNAL(activated()),note,SLOT(close()));
+  note->sendEvent();
+  return;
 }
 
 
