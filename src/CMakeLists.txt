@@ -1,7 +1,7 @@
 set(kingston_SRCS reboot_listener.cpp
-   listener.cpp
+   update_listener.cpp
    notifier.cpp
-   worker.cpp
+   update_worker.cpp
  )
 
 kde4_add_executable(testapp_kingston testapp_main.cpp test_window.cpp ${kingston_SRCS})

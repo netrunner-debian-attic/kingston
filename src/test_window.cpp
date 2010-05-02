@@ -45,9 +45,9 @@ void test_window_t::show_new_updates(int updates, int security_updates) {
   m_updates->setText(QString("%1 updates and %2 security updates available").arg(updates).arg(security_updates));
 }
 
-void test_window_t::show_error_message(QString error,worker_t::error_code_t errorcode) {
+void test_window_t::show_error_message(QString error,update_worker_t::error_code_t errorcode) {
   m_updates->setText(error);
-  if(errorcode== worker_t::temporary_failure) {
+  if(errorcode== update_worker_t::temporary_failure) {
     QTimer::singleShot(60*1000,this,SIGNAL(check_for_updates_requested()));
   }
 }

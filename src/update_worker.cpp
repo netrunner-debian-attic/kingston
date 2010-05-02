@@ -24,19 +24,19 @@
 
 */
 
-#include "worker.h"
+#include "update_worker.h"
 #include <QProcess>
 #include <QDebug>
 
 static const QString apt_check("/usr/lib/update-notifier/apt-check");
 
-worker_t::worker_t(QObject* parent) : QObject(parent){
+update_worker_t::update_worker_t(QObject* parent) : QObject(parent){
   m_runner = new QProcess(this);
   connect(m_runner,SIGNAL(finished(int)),this,SLOT(runner_done()));
 }
 
 
-void worker_t::check_for_updates() {
+void update_worker_t::check_for_updates() {
   if(m_runner->state()==QProcess::NotRunning) {
     m_runner->start(apt_check);
   } else {
@@ -44,7 +44,7 @@ void worker_t::check_for_updates() {
   }
 }
 
-void worker_t::runner_done() {
+void update_worker_t::runner_done() {
   if(m_runner->exitStatus()==QProcess::NormalExit && m_runner->exitCode()==0) {
     QByteArray result = m_runner->readAllStandardError();
     Q_ASSERT(result.count(';')==1);

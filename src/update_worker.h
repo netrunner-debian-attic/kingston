@@ -24,18 +24,18 @@
 
 */
 
-#ifndef WORKER_T_H
-#define WORKER_T_H
+#ifndef UPDATE_WORKER_H
+#define UPDATE_WORKER_H
 
 
 #include <QObject>
 
 class QProcess;
 
-class worker_t : public QObject {
+class update_worker_t : public QObject {
   Q_OBJECT
   public:
-    worker_t(QObject* parent=0);
+    update_worker_t(QObject* parent=0);
     enum error_code_t {
       temporary_failure,
       permanent_failure,
@@ -45,7 +45,7 @@ class worker_t : public QObject {
     void check_for_updates();
   Q_SIGNALS:
     void updates_available(int updates,int security_updates);
-    void error(QString message, worker_t::error_code_t);
+    void error(QString message, update_worker_t::error_code_t);
   private Q_SLOTS:
     void runner_done();
   private:
@@ -53,4 +53,4 @@ class worker_t : public QObject {
     
 };
 
-#endif // WORKER_T_H
+#endif // UPDATE_WORKER_H

@@ -30,16 +30,16 @@
 #include <KDEDModule>
 #include <QObject>
 
-class listener_t;
+class update_listener_t;
 class notifier_t;
-class worker_t;
+class update_worker_t;
 class reboot_listener_t;
 class kingston_update_notifier_module_t : public KDEDModule {
   public:
     kingston_update_notifier_module_t(QObject* parent,  const QList<QVariant>&);
   private:
-    worker_t* m_worker;
-    listener_t* m_listener;
+    update_worker_t* m_update_worker;
+    update_listener_t* m_update_listener;
     notifier_t* m_notifier;
     reboot_listener_t* m_reboot_listener;
     

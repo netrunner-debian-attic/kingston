@@ -28,7 +28,7 @@
 #define TEST_WINDOW_H
 
 #include <QWidget>
-#include "worker.h"
+#include "update_worker.h"
 
 class QLabel;
 class QPushButton;
@@ -39,7 +39,7 @@ class test_window_t : public QWidget {
     test_window_t(QWidget* parent=0);
   public Q_SLOTS:
     void show_new_updates(int updates,int security_updates);
-    void show_error_message(QString,worker_t::error_code_t);
+    void show_error_message(QString,update_worker_t::error_code_t);
   Q_SIGNALS:
     void check_for_updates_requested();
   private:

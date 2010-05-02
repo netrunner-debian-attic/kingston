@@ -24,31 +24,29 @@
 
 */
 
-#include "listener.h"
-#include <QTimer>
-#include <QStringList>
-#include <QDebug>
-#include <QFile>
-#include <KDirWatch>
+#ifndef UPDATE_LISTENER_H
+#define UPDATE_LISTENER_H
 
-listener_t::listener_t(QObject* parent): QObject(parent) {
-  m_watcher = new KDirWatch(this);
-  QStringList paths;
-  paths << "/var/lib/update-notifier/dpkg-run-stamp" << "/var/lib/update-notifier/updates-available" << "/var/lib/apt/periodic/update-success-stamp";
-  Q_FOREACH(const QString& path, paths) {
-    if(QFile::exists(path)) {
-      m_watcher->addFile(path);
-    }
-  }
-  m_buffer_timer = new QTimer(this);
-  m_buffer_timer->setSingleShot(true);
-  m_buffer_timer->setInterval(1000);
-  connect(m_watcher,SIGNAL(dirty(QString)),this,SLOT(filesystem_event_happened()));
-  connect(m_buffer_timer,SIGNAL(timeout()),this,SIGNAL(please_check_for_updates()));
-}
+#include <QObject>
 
-void listener_t::filesystem_event_happened() {
-  m_buffer_timer->start();
-}
+class KDirWatch;
+class QTimer;
 
+class update_listener_t : public QObject {
+  Q_OBJECT
+  public:
+    update_listener_t(QObject *parent=0);
+  Q_SIGNALS:
+    void please_check_for_updates();
+  private Q_SLOTS:
+    /**
+     * function that buffers what happens on the file system and only emits the latest
+     * changed, rather than 100 notifications if the same files is modified quickly
+     */
+    void filesystem_event_happened();
+  private:
+    KDirWatch* m_watcher;
+    QTimer* m_buffer_timer;
+};
 
+#endif // UPDATE_LISTENER_H
