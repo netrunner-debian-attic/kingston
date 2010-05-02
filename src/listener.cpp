@@ -49,7 +49,6 @@ listener_t::listener_t(QObject* parent): QObject(parent) {
 }
 
 void listener_t::filesystem_event_happened() {
-  qDebug() << "filesystemevent";
   m_buffer_timer->start();
 }
 
