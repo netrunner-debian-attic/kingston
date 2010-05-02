@@ -26,25 +26,24 @@
 
 #include "listener.h"
 #include <QTimer>
-#include <QFileSystemWatcher>
 #include <QStringList>
 #include <QDebug>
 #include <QFile>
+#include <KDirWatch>
 
 listener_t::listener_t(QObject* parent): QObject(parent) {
-  m_watcher = new QFileSystemWatcher(this);
+  m_watcher = new KDirWatch(this);
   QStringList paths;
   paths << "/var/lib/update-notifier/dpkg-run-stamp" << "/var/lib/update-notifier/updates-available" << "/var/lib/apt/periodic/update-success-stamp";
   Q_FOREACH(const QString& path, paths) {
     if(QFile::exists(path)) {
-      m_watcher->addPath(path);
+      m_watcher->addFile(path);
     }
   }
   m_buffer_timer = new QTimer(this);
   m_buffer_timer->setSingleShot(true);
-  m_buffer_timer->setInterval(500);
-  connect(m_watcher,SIGNAL(fileChanged(QString)),this,SLOT(filesystem_event_happened()));
-  connect(m_watcher,SIGNAL(directoryChanged(QString)),this,SLOT(filesystem_event_happened()));
+  m_buffer_timer->setInterval(1000);
+  connect(m_watcher,SIGNAL(dirty(QString)),this,SLOT(filesystem_event_happened()));
   connect(m_buffer_timer,SIGNAL(timeout()),this,SIGNAL(please_check_for_updates()));
 }
 

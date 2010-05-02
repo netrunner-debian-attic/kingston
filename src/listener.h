@@ -29,7 +29,7 @@
 
 #include <QObject>
 
-class QFileSystemWatcher;
+class KDirWatch;
 class QTimer;
 
 class listener_t : public QObject {
@@ -45,7 +45,7 @@ class listener_t : public QObject {
      */
     void filesystem_event_happened();
   private:
-    QFileSystemWatcher* m_watcher;
+    KDirWatch* m_watcher;
     QTimer* m_buffer_timer;
 };
 
