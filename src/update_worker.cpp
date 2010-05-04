@@ -28,7 +28,6 @@
 #include <QProcess>
 #include <QDebug>
 
-static const QString apt_check("/usr/lib/update-notifier/apt-check");
 
 update_worker_t::update_worker_t(QObject* parent) : QObject(parent){
   m_runner = new QProcess(this);
@@ -38,6 +37,7 @@ update_worker_t::update_worker_t(QObject* parent) : QObject(parent){
 
 void update_worker_t::check_for_updates() {
   if(m_runner->state()==QProcess::NotRunning) {
+    const QString apt_check("/usr/lib/update-notifier/apt-check");
     m_runner->start(apt_check);
   } else {
     emit error("ALREADY RUNNING",already_running);
