@@ -53,3 +53,4 @@ void test_window_t::show_error_message(QString error,update_worker_t::error_code
 }
 
 
+#include <test_window.moc>

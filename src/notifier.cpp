@@ -84,3 +84,5 @@ void notifier_t::notify_reboot() {
   connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));
   note->sendEvent();
 }
+
+#include <notifier.moc>

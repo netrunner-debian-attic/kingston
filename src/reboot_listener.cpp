@@ -57,3 +57,4 @@ void reboot_listener_t::directory_changed_slot(const QString& path) {
 
 
 
+#include <reboot_listener.moc>

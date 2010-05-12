@@ -52,3 +52,4 @@ void update_listener_t::filesystem_event_happened() {
 }
 
 
+#include <update_listener.moc>

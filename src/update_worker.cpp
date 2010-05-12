@@ -71,3 +71,5 @@ void update_worker_t::runner_done() {
     emit error(QString("RUNNER FAILED"),permanent_failure);
   }
 }
+
+#include <update_worker.moc>
