@@ -2,8 +2,7 @@ Source: kingston-update-notifier
 Section: kde
 Priority: optional
 Maintainer: Sune Vuorela <sune@debian.org>
-Build-Depends: debhelper (>= 7.3.16), pkg-kde-tools (>= 0.5), cmake,
- kdelibs5-dev
+Build-Depends: debhelper (>= 7), cmake, kdelibs5-dev
 Standards-Version: 3.8.4
 
 Package: update-notifier-kde
