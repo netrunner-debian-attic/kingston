@@ -31,11 +31,11 @@
 #include <QTimer>
 #include <QFile>
 
-static const QString reboot_required_path = "/var/run/reboot-required";
+static const char reboot_required_path[] = "/var/run/reboot-required";
 
 reboot_listener_t::reboot_listener_t(QObject* parent): QObject(parent) {
   m_watcher = new KDirWatch(this);
-  m_watcher->addFile(reboot_required_path);
+  m_watcher->addFile(QString::fromLatin1(reboot_required_path));
   connect(m_watcher,SIGNAL(created(QString)),this,SLOT(directory_changed_slot(QString)));
   m_timer = new QTimer(this);
   m_timer->setSingleShot(true);
@@ -43,14 +43,14 @@ reboot_listener_t::reboot_listener_t(QObject* parent): QObject(parent) {
   connect(m_timer,SIGNAL(timeout()),SIGNAL(request_reboot()));
 }
 void reboot_listener_t::check_for_reboot() {
-  if(QFile::exists(reboot_required_path)) {
+  if(QFile::exists(QString::fromLatin1(reboot_required_path))) {
     m_timer->start();
   }
 }
 
 
 void reboot_listener_t::directory_changed_slot(const QString& path) {
-  if(path==reboot_required_path) {
+  if(path==QLatin1String(reboot_required_path)) {
      m_timer->start();
   }
 }
