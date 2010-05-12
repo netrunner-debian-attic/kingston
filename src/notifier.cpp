@@ -26,6 +26,7 @@
 
 #include "notifier.h"
 #include <KIcon>
+#include <KLocale>
 #include <QApplication>
 
 #include <QTimer>
@@ -49,12 +50,12 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
   } else {
     QPixmap px;
     if(security_updates==0) {
-      show_update_notification( "It is recommended to update your system", QString("There is %1 updates available").arg(updates), "dialog-information");
+      show_update_notification(i18n("It is recommended to update your system"), i18np("There is %1 update available", "There are %1 updates available", updates), "dialog-information");
     } else {
       if(updates==0) {
-        show_update_notification( "You should update your system", QString("There is %1 security updates available").arg(security_updates), "dialog-warning");
+        show_update_notification(i18n("You should update your system"), i18np("There is %1 security update available", "There are %1 security updates available", security_updates==0), "dialog-warning");
       } else {
-        show_update_notification( "You should update your system", QString("There is %1 updates and %2 security updates available").arg(updates).arg(security_updates), "dialog-warning" );
+        show_update_notification(i18n("You should update your system"), QString("There is %1 updates and %2 security updates available").arg(updates).arg(security_updates), "dialog-warning" );
       }
     }
       
@@ -67,7 +68,7 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
   note->setText(message);
   note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
   note->setComponentData(*m_component_data);
-  note->setActions(QStringList() << "Later");
+  note->setActions(QStringList() << i18nc("Reboot later", "Later"));
   connect(note,SIGNAL(activated()),note,SLOT(close()));
   note->sendEvent();
   return;
@@ -75,11 +76,11 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
 
 void notifier_t::notify_reboot() {
   KNotification* note = new KNotification("requestreboot",0L, KNotification::Persistent);
-  note->setTitle("Please reboot your system");
-  note->setText("In order to complete this upgrade, you need to reboot your system");
+  note->setTitle(i18n("Please reboot your system"));
+  note->setText(i18n("In order to complete this upgrade, you need to reboot your system"));
   note->setPixmap(KIcon("system-reboot").pixmap(QSize(32,32)));
   note->setComponentData(*m_component_data);
-  note->setActions(QStringList() << "Later");
+  note->setActions(QStringList() << i18nc("Reboot later", "Later"));
   connect(note,SIGNAL(closed()),m_reboot_nagger,SLOT(start()));
   connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));
   note->sendEvent();
