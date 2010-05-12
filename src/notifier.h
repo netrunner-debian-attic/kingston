@@ -29,19 +29,20 @@
 
 #include <QObject>
 
-class KComponentData;
+#include <KComponentData>
+
 class QTimer;
 class notifier_t : public QObject{
   Q_OBJECT
   public:
-    notifier_t(QObject* parent=0);
+    notifier_t(const KComponentData& component_data, QObject* parent=0);
   public Q_SLOTS:
     void notify_new_updates(int updates, int security_updates);
     void notify_reboot();
   private:
     void show_update_notification(const QString& title, const QString& message, const QString& iconname);
+    const KComponentData& m_component_data;
     QTimer* m_reboot_nagger;
-    KComponentData* m_component_data;
 };
 
 #endif // NOTIFIER_H

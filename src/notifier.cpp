@@ -35,8 +35,8 @@
 #include <QDebug>
 
 
-notifier_t::notifier_t(QObject* parent): QObject(parent) {
-  m_component_data= new KComponentData("kingston_update_notifier");
+notifier_t::notifier_t(const KComponentData& component_data, QObject* parent): QObject(parent),
+  m_component_data(component_data) {
   m_reboot_nagger = new QTimer(this);
   m_reboot_nagger->setSingleShot(true);
   m_reboot_nagger->setInterval(60/*minutes*/ * 60/*seconds*/ * 1000/*msec*/);
@@ -67,7 +67,7 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
   note->setTitle(title);
   note->setText(message);
   note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
-  note->setComponentData(*m_component_data);
+  note->setComponentData(m_component_data);
   note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
   connect(note,SIGNAL(activated()),note,SLOT(close()));
   note->sendEvent();
@@ -79,7 +79,7 @@ void notifier_t::notify_reboot() {
   note->setTitle(i18n("Please reboot your system"));
   note->setText(i18n("In order to complete this upgrade, you need to reboot your system"));
   note->setPixmap(KIcon("system-reboot").pixmap(QSize(32,32)));
-  note->setComponentData(*m_component_data);
+  note->setComponentData(m_component_data);
   note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
   connect(note,SIGNAL(closed()),m_reboot_nagger,SLOT(start()));
   connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));

@@ -33,6 +33,7 @@
 
 int main(int argc, char **argv) {
   QApplication app(argc, argv);
+  KComponentData cd("kingston_update_notifier");
   test_window_t* test_window = new test_window_t();
   update_worker_t* update_worker = new update_worker_t();
   QObject::connect(test_window,SIGNAL(check_for_updates_requested()),update_worker,SLOT(check_for_updates()));
@@ -40,7 +41,7 @@ int main(int argc, char **argv) {
   QObject::connect(update_worker,SIGNAL(error(QString,update_worker_t::error_code_t)),test_window,SLOT(show_error_message(QString,update_worker_t::error_code_t)));
   update_listener_t* update_listener = new update_listener_t();
   QObject::connect(update_listener,SIGNAL(please_check_for_updates()),update_worker,SLOT(check_for_updates()));
-  notifier_t* notifier = new notifier_t();
+  notifier_t* notifier = new notifier_t(cd);
   QObject::connect(update_worker,SIGNAL(updates_available(int,int)),notifier,SLOT(notify_new_updates(int,int)));
   test_window->show();
   update_worker->check_for_updates();
