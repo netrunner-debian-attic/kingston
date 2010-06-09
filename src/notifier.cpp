@@ -36,8 +36,8 @@
 
 
 notifier_t::notifier_t(const KComponentData& component_data, QObject* parent): QObject(parent),
-  m_component_data(component_data) {
-  m_reboot_nagger = new QTimer(this);
+  m_component_data(component_data),
+  m_reboot_nagger (new QTimer(this)) {
   m_reboot_nagger->setSingleShot(true);
   m_reboot_nagger->setInterval(60/*minutes*/ * 60/*seconds*/ * 1000/*msec*/);
   connect(m_reboot_nagger,SIGNAL(timeout()),SLOT(notify_reboot()));
