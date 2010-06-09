@@ -46,7 +46,9 @@ notifier_t::notifier_t(const KComponentData& component_data, QObject* parent): Q
 
 void notifier_t::notify_new_updates(int updates, int security_updates) {
   if(updates==0 && security_updates==0) {
-    //do nothing, I guess
+    if(m_upgrade_notification) {
+      m_upgrade_notification.data()->close();
+    }
   } else {
     QPixmap px;
     if(security_updates==0) {
