@@ -30,7 +30,9 @@
 #include <QObject>
 
 #include <KComponentData>
+#include <QWeakPointer>
 
+class KNotification;
 class QTimer;
 class notifier_t : public QObject{
   Q_OBJECT
@@ -43,6 +45,7 @@ class notifier_t : public QObject{
     void show_update_notification(const QString& title, const QString& message, const QString& iconname);
     const KComponentData& m_component_data;
     QTimer* m_reboot_nagger;
+    QWeakPointer<KNotification> m_upgrade_notification;
 };
 
 #endif // NOTIFIER_H

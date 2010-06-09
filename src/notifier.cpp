@@ -63,14 +63,17 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
 }
 
 void notifier_t::show_update_notification(const QString& title, const QString& message, const QString& iconname) {
+  if(m_upgrade_notification) {
+    m_upgrade_notification.data()->close();
+  }
   KNotification* note = new KNotification("updatesavailable",0L, KNotification::Persistent);
   note->setTitle(title);
   note->setText(message);
   note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
   note->setComponentData(m_component_data);
   note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
-  connect(note,SIGNAL(activated()),note,SLOT(close()));
   note->sendEvent();
+  m_upgrade_notification=note;
   return;
 }
 
