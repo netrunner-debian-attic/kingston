@@ -1,3 +1,8 @@
+kingston-update-notifier (1.1) unstable; urgency=low
+
+
+ -- Sune Vuorela <sune@debian.org>  Fri, 16 Jul 2010 23:45:30 +0200
+
 kingston-update-notifier (1.0) unstable; urgency=low
 
   * Initial Release.
