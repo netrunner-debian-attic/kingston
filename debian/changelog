@@ -3,6 +3,8 @@ kingston-update-notifier (1.1) unstable; urgency=low
   * Improve messages, mostly by Pino Toscano.
     Includes proper plural messages.
     (Closes: #585783)
+  * Fix handling of notifications to not keep adding more, and to kill old
+    ones (Closes: #584315)
 
  -- Sune Vuorela <sune@debian.org>  Fri, 16 Jul 2010 23:45:30 +0200
 
