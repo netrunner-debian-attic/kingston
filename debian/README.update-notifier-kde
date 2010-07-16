@@ -1,0 +1,32 @@
+
+update-notifier-kde has two separate, but related purposes.
+
+It notifies the user if a daily check indicates that updates
+for installed packages are available. Security-relevant
+updates are pointed out specifically.
+
+It notifies the user if a newly installed or upgraded package
+requires rebooting the system.
+
+Notifications are handled by the KDE notification system.
+By default a popup message is displayed from the notification
+icon in the system tray.
+
+Checks for updates are handled by update-notifier-common.
+
+
+Configurable Behavior
+---------------------
+
+As update-notifier-kde only acts as a frontend for
+update-notifier-common, see that package's documentation for
+details.
+
+The manner of notification can be changed in
+
+  System Settings > Notifications > System Notifications > Applications
+  > Event source: Update notification daemon
+
+You can disable and (re)enable the update-notifier-kde entirely from
+
+  System Settings > Advanced > Service Manager
