@@ -1,3 +1,9 @@
+kingston-update-notifier (1.2) unstable; urgency=low
+
+  * Fix segfault. Closes: #589491
+
+ -- Sune Vuorela <sune@debian.org>  Mon, 19 Jul 2010 20:48:13 +0200
+
 kingston-update-notifier (1.1) unstable; urgency=low
 
   * Improve messages, mostly by Pino Toscano.

@@ -43,7 +43,7 @@ class notifier_t : public QObject{
     void notify_reboot();
   private:
     void show_update_notification(const QString& title, const QString& message, const QString& iconname);
-    const KComponentData& m_component_data;
+    KComponentData m_component_data;
     QTimer* m_reboot_nagger;
     QWeakPointer<KNotification> m_upgrade_notification;
 };
