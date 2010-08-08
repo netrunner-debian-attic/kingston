@@ -8,6 +8,6 @@ Standards-Version: 3.8.4
 Package: update-notifier-kde
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, update-notifier-common
-Description: Update notifier for the KDE Plasma Desktop
- This package contains a module to notify the user when there is a need for a
+Description: update notifier for the KDE Plasma Desktop
+ This package contains a module to notify the user when there is a need for an
  upgrade or a security upgrade.
