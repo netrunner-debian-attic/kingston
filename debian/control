@@ -3,7 +3,7 @@ Section: kde
 Priority: optional
 Maintainer: Sune Vuorela <sune@debian.org>
 Build-Depends: debhelper (>= 7), cmake, kdelibs5-dev, kdebase-workspace-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 
 Package: update-notifier-kde
 Architecture: any
