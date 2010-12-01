@@ -2,6 +2,7 @@ kingston-update-notifier (1.2+nmu1) UNRELEASED; urgency=low
 
   * Non-maintainer upload.
   * Added reboot option, thanks to George Stephanos. (Closes: #604684)
+  * Added POT file.
 
  -- Kai Wasserbäch <debian@carbon-project.org>  Wed, 01 Dec 2010 16:32:20 +0100
 
