@@ -28,6 +28,8 @@
 #include <KIcon>
 #include <KLocale>
 #include <QApplication>
+#include <QtDBus>
+#include <kworkspace/kworkspace.h>
 
 #include <QTimer>
 #include <KNotification>
@@ -73,7 +75,8 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
   note->setText(message);
   note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
   note->setComponentData(m_component_data);
-  note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
+  note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later")
+    << i18nc("Reboot the system", "Reboot"));
   note->sendEvent();
   m_upgrade_notification=note;
   return;
@@ -88,7 +91,13 @@ void notifier_t::notify_reboot() {
   note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
   connect(note,SIGNAL(closed()),m_reboot_nagger,SLOT(start()));
   connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));
+  connect(note,SIGNAL(action2Activated()),SLOT(reboot()));
   note->sendEvent();
+}
+
+void notifier_t::reboot() {
+  QDBusInterface interface("org.kde.ksmserver", "/KSMServer", "org.kde.KSMServerInterface");
+  interface.call("logout", KWorkSpace::ShutdownConfirmYes, KWorkSpace::ShutdownTypeReboot, KWorkSpace::ShutdownModeInteractive);
 }
 
 #include <notifier.moc>
