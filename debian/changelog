@@ -6,6 +6,7 @@ kingston-update-notifier (1.2+nmu1) UNRELEASED; urgency=low
   * debian/control:
     - Bumped Standards-Version to 3.9.1, no further changes needed.
     - Added Recommends on anacron. (Closes: #597168)
+    - Added Vcs-{Git,Browser} fields.
 
  -- Kai Wasserbäch <debian@carbon-project.org>  Wed, 01 Dec 2010 16:32:20 +0100
 
