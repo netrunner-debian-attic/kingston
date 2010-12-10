@@ -1,18 +1,24 @@
 [Global]
 Icon=applications-other
 Comment=Update notification daemon
+Comment[de]=Aktualisierungs-Benachrichtigungs-Daemon
 Name=Update notification daemon
+Name[de]=Aktualisierungs-Benachrichtigungs-Daemon
 
 [Context/info]
 Name=Information
+Name[de]=Information
 Comment=Used for update information
+Comment[de]=Für Aktualisierungsinformationen verwandt.
 
 [Event/updatesavailable]
 Name=Available updates
+Name[de]=Verfügbare Aktualisierungen
 Contexts=info
 Action=Popup
 
 [Event/requestreboot]
 Name=Update notifier
+Name[de]=Aktualisierungs-Notifier
 Contexts=info
 Action=Popup

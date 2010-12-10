@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Update notifier
+Name[de]=Aktualisierungs-Notifier
 Type=Service
 Comment=Notifies user when there are updates available
+Comment[de]=Benachrichtigt den Benutzer, wenn Aktualisierungen verfügbar sind.
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=kingston_update_notifier
 X-KDE-DBus-ModuleName=kingston_update_notifier
