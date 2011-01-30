@@ -59,8 +59,8 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
       if(updates==0) {
         show_update_notification(i18n("You should update your system"), i18np("There is %1 security update available", "There are %1 security updates available", security_updates==0), "dialog-warning");
       } else {
-        const QString updates_text = i18n("%1 update", "%1 updates", updates);
-        const QString security_updates_text = i18n("%1 security update", "%1 security updates", security_updates);
+        const QString updates_text = i18np("%1 update", "%1 updates", updates);
+        const QString security_updates_text = i18np("%1 security update", "%1 security updates", security_updates);
         show_update_notification(i18n("You should update your system"), i18nc("%1 is e.g. '3 updates'; %2 is e.g. '1 security update'", "There are: %1, and %2", updates_text, security_updates_text), "dialog-warning");
       }
     }
