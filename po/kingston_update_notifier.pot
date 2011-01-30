@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-12-01 15:54+0100\n"
+"POT-Creation-Date: 2011-01-30 16:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid_plural "There are %1 updates available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:60 src/notifier.cpp:62
+#: src/notifier.cpp:60 src/notifier.cpp:64
 msgid "You should update your system"
 msgstr ""
 
@@ -40,20 +40,36 @@ msgid_plural "There are %1 security updates available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:78 src/notifier.cpp:91
+#: src/notifier.cpp:62
+#, kde-format
+msgid "%1 update"
+msgstr ""
+
+#: src/notifier.cpp:63
+#, kde-format
+msgid "%1 security update"
+msgstr ""
+
+#: src/notifier.cpp:64
+#, kde-format
+msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
+msgid "There are: %1, and %2"
+msgstr ""
+
+#: src/notifier.cpp:80 src/notifier.cpp:93
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
 msgstr ""
 
-#: src/notifier.cpp:79
+#: src/notifier.cpp:81
 msgctxt "Reboot the system"
 msgid "Reboot"
 msgstr ""
 
-#: src/notifier.cpp:87
+#: src/notifier.cpp:89
 msgid "Please reboot your system"
 msgstr ""
 
-#: src/notifier.cpp:88
+#: src/notifier.cpp:90
 msgid "In order to complete this upgrade, you need to reboot your system"
 msgstr ""
