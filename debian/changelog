@@ -5,6 +5,7 @@ kingston-update-notifier (1.2.1) UNRELEASED; urgency=low
 
   [ Kai Wasserbäch ]
   * Regenerate POT.
+  * Updated German translation.
 
  -- Sune Vuorela <sune@debian.org>  Sat, 29 Jan 2011 13:29:23 +0100
 
