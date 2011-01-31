@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kingston-update-notifier 1.3\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-30 16:18+0100\n"
-"PO-Revision-Date: 2011-01-30 16:22+0100\n"
+"POT-Creation-Date: 2011-01-31 13:56+0100\n"
+"PO-Revision-Date: 2011-01-31 13:58+0100\n"
 "Last-Translator: Kai Wasserbäch <curan@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -44,12 +44,16 @@ msgstr[1] "Es sind %1 Sicherheitsaktualisierungen verfügbar."
 #: src/notifier.cpp:62
 #, kde-format
 msgid "%1 update"
-msgstr "%1 neue(s) Paket(e)"
+msgid_plural "%1 updates"
+msgstr[0] "%1 neues Paket"
+msgstr[1] "%1 neue Pakete"
 
 #: src/notifier.cpp:63
 #, kde-format
 msgid "%1 security update"
-msgstr "%1 Sicherheitsaktualisierung(en)"
+msgid_plural "%1 security updates"
+msgstr[0] "%1 Sicherheitsaktualisierung"
+msgstr[1] "%1 Sicherheitsaktualisierungen"
 
 #: src/notifier.cpp:64
 #, kde-format
