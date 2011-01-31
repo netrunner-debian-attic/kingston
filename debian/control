@@ -2,7 +2,8 @@ Source: kingston-update-notifier
 Section: kde
 Priority: optional
 Maintainer: Sune Vuorela <sune@debian.org>
-Build-Depends: debhelper (>= 7), cmake, kdelibs5-dev, kdebase-workspace-dev
+Build-Depends: debhelper (>= 7), cmake (>= 2.6.3~), kdelibs5-dev,
+ kdebase-workspace-dev
 Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/pkg-kde/kingston.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kingston.git;a=summary
