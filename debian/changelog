@@ -1,4 +1,4 @@
-kingston-update-notifier (1.2.1) UNRELEASED; urgency=low
+kingston-update-notifier (1.2.1) unstable; urgency=low
 
   [ Pino Toscano ]
   * Fix an untranslatable message.
@@ -12,7 +12,7 @@ kingston-update-notifier (1.2.1) UNRELEASED; urgency=low
   * debian/control: Added myself to uploaders (on Sune's invitation, thanks!)
     and moved the maintainership to KDE Extras.
 
- -- Sune Vuorela <sune@debian.org>  Sat, 29 Jan 2011 13:29:23 +0100
+ -- Kai Wasserbäch <curan@debian.org>  Sun, 13 Feb 2011 21:18:18 +0100
 
 kingston-update-notifier (1.2+nmu1) unstable; urgency=low
 
