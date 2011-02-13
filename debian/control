@@ -1,7 +1,8 @@
 Source: kingston-update-notifier
 Section: kde
 Priority: optional
-Maintainer: Sune Vuorela <sune@debian.org>
+Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+Uploaders: Sune Vuorela <sune@debian.org>, Kai Wasserbäch <curan@debian.org>
 Build-Depends: debhelper (>= 7), cmake (>= 2.6.3~), kdelibs5-dev,
  kdebase-workspace-dev
 Standards-Version: 3.9.1

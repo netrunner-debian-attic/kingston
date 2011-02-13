@@ -9,6 +9,8 @@ kingston-update-notifier (1.2.1) UNRELEASED; urgency=low
   * Actually build the translations in the po directory.
   * debian/control: Tighten B-D on CMake (for translation; I've only tested
     the GETTEXT_CREATE_TRANSLATIONS macro as present of version 2.6.3+).
+  * debian/control: Added myself to uploaders (on Sune's invitation, thanks!)
+    and moved the maintainership to KDE Extras.
 
  -- Sune Vuorela <sune@debian.org>  Sat, 29 Jan 2011 13:29:23 +0100
 
