@@ -1,3 +1,9 @@
+kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
+
+  * src/CMakeLists.txt: Ensure minimal linking.
+
+ -- Kai Wasserbäch <curan@debian.org>  Mon, 14 Feb 2011 10:42:55 +0100
+
 kingston-update-notifier (1.2.1) unstable; urgency=low
 
   [ Pino Toscano ]
