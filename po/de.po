@@ -19,9 +19,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/notifier.cpp:63
+#, kde-format
+msgid "%1 security update"
+msgid_plural "%1 security updates"
+msgstr[0] "%1 Sicherheitsaktualisierung"
+msgstr[1] "%1 Sicherheitsaktualisierungen"
+
+#: src/notifier.cpp:62
+#, kde-format
+msgid "%1 update"
+msgid_plural "%1 updates"
+msgstr[0] "%1 neues Paket"
+msgstr[1] "%1 neue Pakete"
+
+#: src/notifier.cpp:90
+msgid "In order to complete this upgrade, you need to reboot your system"
+msgstr "Um dieses Upgrade abzuschließen, müssen Sie Ihr System neu starten."
+
 #: src/notifier.cpp:57
 msgid "It is recommended to update your system"
 msgstr "Es wird empfohlen, Ihr System zu aktualisieren."
+
+#: src/notifier.cpp:80 src/notifier.cpp:93
+msgctxt "Do the proposed action (upgrade, reboot, etc) later"
+msgid "Later"
+msgstr "Später"
+
+#: src/notifier.cpp:89
+msgid "Please reboot your system"
+msgstr "Bitte starten Sie Ihr System neu."
+
+#: src/notifier.cpp:81
+msgctxt "Reboot the system"
+msgid "Reboot"
+msgstr "Neustart"
+
+#: src/notifier.cpp:64
+#, kde-format
+msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
+msgid "There are: %1, and %2"
+msgstr "Es ist/sind %1 und %2 verfügbar."
+
+#: src/notifier.cpp:60
+#, kde-format
+msgid "There is %1 security update available"
+msgid_plural "There are %1 security updates available"
+msgstr[0] "Es ist %1 Sicherheitsaktualisierung verfügbar."
+msgstr[1] "Es sind %1 Sicherheitsaktualisierungen verfügbar."
 
 #: src/notifier.cpp:57
 #, kde-format
@@ -33,48 +78,3 @@ msgstr[1] "Es sind %1 neue Pakete verfügbar."
 #: src/notifier.cpp:60 src/notifier.cpp:64
 msgid "You should update your system"
 msgstr "Sie sollten Ihr System aktualisieren."
-
-#: src/notifier.cpp:60
-#, kde-format
-msgid "There is %1 security update available"
-msgid_plural "There are %1 security updates available"
-msgstr[0] "Es ist %1 Sicherheitsaktualisierung verfügbar."
-msgstr[1] "Es sind %1 Sicherheitsaktualisierungen verfügbar."
-
-#: src/notifier.cpp:62
-#, kde-format
-msgid "%1 update"
-msgid_plural "%1 updates"
-msgstr[0] "%1 neues Paket"
-msgstr[1] "%1 neue Pakete"
-
-#: src/notifier.cpp:63
-#, kde-format
-msgid "%1 security update"
-msgid_plural "%1 security updates"
-msgstr[0] "%1 Sicherheitsaktualisierung"
-msgstr[1] "%1 Sicherheitsaktualisierungen"
-
-#: src/notifier.cpp:64
-#, kde-format
-msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
-msgid "There are: %1, and %2"
-msgstr "Es ist/sind %1 und %2 verfügbar."
-
-#: src/notifier.cpp:80 src/notifier.cpp:93
-msgctxt "Do the proposed action (upgrade, reboot, etc) later"
-msgid "Later"
-msgstr "Später"
-
-#: src/notifier.cpp:81
-msgctxt "Reboot the system"
-msgid "Reboot"
-msgstr "Neustart"
-
-#: src/notifier.cpp:89
-msgid "Please reboot your system"
-msgstr "Bitte starten Sie Ihr System neu."
-
-#: src/notifier.cpp:90
-msgid "In order to complete this upgrade, you need to reboot your system"
-msgstr "Um dieses Upgrade abzuschließen, müssen Sie Ihr System neu starten."
