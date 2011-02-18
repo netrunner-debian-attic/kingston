@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kingston-update-notifier 1.3\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-18 16:23+0100\n"
-"PO-Revision-Date: 2011-02-18 16:31+0100\n"
+"POT-Creation-Date: 2011-02-18 18:00+0100\n"
+"PO-Revision-Date: 2011-02-18 18:10+0100\n"
 "Last-Translator: Kai Wasserbäch <curan@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -19,14 +19,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/notifier.cpp:65
+#: src/notifier.cpp:64
 #, kde-format
-msgid "%1 is a security update"
-msgid_plural "%1 are security updates"
-msgstr[0] "ist %1 eine Sicherheitsaktualisierung"
-msgstr[1] "sind %1 Sicherheitsaktualisierungen"
+msgid "%1 security update"
+msgid_plural "%1 security updates"
+msgstr[0] "%1 Sicherheitsaktualisierung"
+msgstr[1] "%1 Sicherheitsaktualisierungen"
 
-#: src/notifier.cpp:92
+#: src/notifier.cpp:63
+#, kde-format
+msgid "%1 update"
+msgid_plural "%1 updates"
+msgstr[0] "%1 neues Paket"
+msgstr[1] "%1 neue Pakete"
+
+#: src/notifier.cpp:93
 msgid "In order to complete this upgrade, you need to reboot your system."
 msgstr "Um dieses Upgrade abzuschließen, müssen Sie Ihr System neu starten."
 
@@ -34,27 +41,21 @@ msgstr "Um dieses Upgrade abzuschließen, müssen Sie Ihr System neu starten."
 msgid "It is recommended to update your system."
 msgstr "Es wird empfohlen, Ihr System zu aktualisieren."
 
-#: src/notifier.cpp:82 src/notifier.cpp:95
+#: src/notifier.cpp:83 src/notifier.cpp:96
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
 msgstr "Später"
 
-#: src/notifier.cpp:91
+#: src/notifier.cpp:92
 msgid "Please reboot your system."
 msgstr "Bitte starten Sie Ihr System neu."
 
-#: src/notifier.cpp:83
+#: src/notifier.cpp:84
 msgctxt "Reboot the system"
 msgid "Reboot"
 msgstr "Neustart"
 
-#: src/notifier.cpp:66
-#, kde-format
-msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
-msgid "There %1, of which %2."
-msgstr "Es %1 verfügbar, davon %2."
-
-#: src/notifier.cpp:62
+#: src/notifier.cpp:61
 #, kde-format
 msgid "There is %1 security update available."
 msgid_plural "There are %1 security updates available."
@@ -68,13 +69,16 @@ msgid_plural "There are %1 updates available."
 msgstr[0] "Es ist %1 neues Paket verfügbar."
 msgstr[1] "Es sind %1 neue Pakete verfügbar."
 
-#: src/notifier.cpp:62 src/notifier.cpp:66
+#: src/notifier.cpp:67
+#, kde-format
+msgctxt ""
+"%2 is e.g. '3 updates'; %3 is e.g. '1 security update'; the plural form "
+"represents the number of total updates (non-security and security ones)"
+msgid "There is: %2, and %3"
+msgid_plural "There are: %2, and %3"
+msgstr[0] "%2 und %3 sind verfügbar."
+msgstr[1] "%2 und %3 sind verfügbar."
+
+#: src/notifier.cpp:61 src/notifier.cpp:67
 msgid "You should update your system."
 msgstr "Sie sollten Ihr System aktualisieren."
-
-#: src/notifier.cpp:64
-#, kde-format
-msgid "is: %1 update"
-msgid_plural "are: %1 updates"
-msgstr[0] "ist %1 neues Paket"
-msgstr[1] "sind %1 neue Pakete"
