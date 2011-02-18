@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-01-31 13:56+0100\n"
+"POT-Creation-Date: 2011-02-18 16:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,61 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: src/notifier.cpp:57
-msgid "It is recommended to update your system"
+msgid "It is recommended to update your system."
 msgstr ""
 
 #: src/notifier.cpp:57
 #, kde-format
-msgid "There is %1 update available"
-msgid_plural "There are %1 updates available"
+msgid "There is %1 update available."
+msgid_plural "There are %1 updates available."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:60 src/notifier.cpp:64
-msgid "You should update your system"
+#: src/notifier.cpp:62 src/notifier.cpp:66
+msgid "You should update your system."
 msgstr ""
-
-#: src/notifier.cpp:60
-#, kde-format
-msgid "There is %1 security update available"
-msgid_plural "There are %1 security updates available"
-msgstr[0] ""
-msgstr[1] ""
 
 #: src/notifier.cpp:62
 #, kde-format
-msgid "%1 update"
-msgid_plural "%1 updates"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/notifier.cpp:63
-#, kde-format
-msgid "%1 security update"
-msgid_plural "%1 security updates"
+msgid "There is %1 security update available."
+msgid_plural "There are %1 security updates available."
 msgstr[0] ""
 msgstr[1] ""
 
 #: src/notifier.cpp:64
 #, kde-format
+msgid "is: %1 update"
+msgid_plural "are: %1 updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/notifier.cpp:65
+#, kde-format
+msgid "%1 is a security update"
+msgid_plural "%1 are security updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/notifier.cpp:66
+#, kde-format
 msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
-msgid "There are: %1, and %2"
+msgid "There %1, of which %2."
 msgstr ""
 
-#: src/notifier.cpp:80 src/notifier.cpp:93
+#: src/notifier.cpp:82 src/notifier.cpp:95
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
 msgstr ""
 
-#: src/notifier.cpp:81
+#: src/notifier.cpp:83
 msgctxt "Reboot the system"
 msgid "Reboot"
 msgstr ""
 
-#: src/notifier.cpp:89
-msgid "Please reboot your system"
+#: src/notifier.cpp:91
+msgid "Please reboot your system."
 msgstr ""
 
-#: src/notifier.cpp:90
-msgid "In order to complete this upgrade, you need to reboot your system"
+#: src/notifier.cpp:92
+msgid "In order to complete this upgrade, you need to reboot your system."
 msgstr ""
