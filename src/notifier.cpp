@@ -54,14 +54,16 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
   } else {
     QPixmap px;
     if(security_updates==0) {
-      show_update_notification(i18n("It is recommended to update your system"), i18np("There is %1 update available", "There are %1 updates available", updates), "dialog-information");
+      show_update_notification(i18n("It is recommended to update your system."), i18np("There is %1 update available.", "There are %1 updates available.", updates), "dialog-information");
     } else {
-      if(updates==0) {
-        show_update_notification(i18n("You should update your system"), i18np("There is %1 security update available", "There are %1 security updates available", security_updates==0), "dialog-warning");
+      if(updates==0) {  // FIXME: Do we actually ever reach this code? #613529
+                        //        and the Python script apt-check of u-n-c
+                        //        suggest otherwise.
+        show_update_notification(i18n("You should update your system."), i18np("There is %1 security update available.", "There are %1 security updates available.", security_updates==0), "dialog-warning");
       } else {
-        const QString updates_text = i18np("%1 update", "%1 updates", updates);
-        const QString security_updates_text = i18np("%1 security update", "%1 security updates", security_updates);
-        show_update_notification(i18n("You should update your system"), i18nc("%1 is e.g. '3 updates'; %2 is e.g. '1 security update'", "There are: %1, and %2", updates_text, security_updates_text), "dialog-warning");
+        const QString updates_text = i18np("is: %1 update", "are: %1 updates", updates);
+        const QString security_updates_text = i18np("%1 is a security update", "%1 are security updates", security_updates);
+        show_update_notification(i18n("You should update your system."), i18nc("%1 is e.g. '3 updates'; %2 is e.g. '1 security update'", "There %1, of which %2.", updates_text, security_updates_text), "dialog-warning");
       }
     }
       
@@ -86,8 +88,8 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
 
 void notifier_t::notify_reboot() {
   KNotification* note = new KNotification("requestreboot",0L, KNotification::Persistent);
-  note->setTitle(i18n("Please reboot your system"));
-  note->setText(i18n("In order to complete this upgrade, you need to reboot your system"));
+  note->setTitle(i18n("Please reboot your system."));
+  note->setText(i18n("In order to complete this upgrade, you need to reboot your system."));
   note->setPixmap(KIcon("system-reboot").pixmap(QSize(32,32)));
   note->setComponentData(m_component_data);
   note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
