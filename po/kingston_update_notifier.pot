@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-18 16:23+0100\n"
+"POT-Creation-Date: 2011-02-18 18:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,51 +29,55 @@ msgid_plural "There are %1 updates available."
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:62 src/notifier.cpp:66
+#: src/notifier.cpp:61 src/notifier.cpp:67
 msgid "You should update your system."
 msgstr ""
 
-#: src/notifier.cpp:62
+#: src/notifier.cpp:61
 #, kde-format
 msgid "There is %1 security update available."
 msgid_plural "There are %1 security updates available."
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/notifier.cpp:63
+#, kde-format
+msgid "%1 update"
+msgid_plural "%1 updates"
+msgstr[0] ""
+msgstr[1] ""
+
 #: src/notifier.cpp:64
 #, kde-format
-msgid "is: %1 update"
-msgid_plural "are: %1 updates"
+msgid "%1 security update"
+msgid_plural "%1 security updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:65
+#: src/notifier.cpp:67
 #, kde-format
-msgid "%1 is a security update"
-msgid_plural "%1 are security updates"
+msgctxt ""
+"%2 is e.g. '3 updates'; %3 is e.g. '1 security update'; the plural form "
+"represents the number of total updates (non-security and security ones)"
+msgid "There is: %2, and %3"
+msgid_plural "There are: %2, and %3"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:66
-#, kde-format
-msgctxt "%1 is e.g. '3 updates'; %2 is e.g. '1 security update'"
-msgid "There %1, of which %2."
-msgstr ""
-
-#: src/notifier.cpp:82 src/notifier.cpp:95
+#: src/notifier.cpp:83 src/notifier.cpp:96
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
 msgstr ""
 
-#: src/notifier.cpp:83
+#: src/notifier.cpp:84
 msgctxt "Reboot the system"
 msgid "Reboot"
 msgstr ""
 
-#: src/notifier.cpp:91
+#: src/notifier.cpp:92
 msgid "Please reboot your system."
 msgstr ""
 
-#: src/notifier.cpp:92
+#: src/notifier.cpp:93
 msgid "In order to complete this upgrade, you need to reboot your system."
 msgstr ""
