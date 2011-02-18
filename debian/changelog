@@ -3,6 +3,7 @@ kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
   * src/CMakeLists.txt: Ensure minimal linking.
   * debian/source/options: Added with compression BZip2.
   * src/notifier.cpp: Corrected the messages to the users. (Closes: #613529)
+  * po/de.po: Updated German translation.
 
  -- Kai Wasserbäch <curan@debian.org>  Mon, 14 Feb 2011 10:42:55 +0100
 
