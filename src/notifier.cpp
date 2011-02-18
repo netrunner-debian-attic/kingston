@@ -56,14 +56,15 @@ void notifier_t::notify_new_updates(int updates, int security_updates) {
     if(security_updates==0) {
       show_update_notification(i18n("It is recommended to update your system."), i18np("There is %1 update available.", "There are %1 updates available.", updates), "dialog-information");
     } else {
-      if(updates==0) {  // FIXME: Do we actually ever reach this code? #613529
-                        //        and the Python script apt-check of u-n-c
-                        //        suggest otherwise.
-        show_update_notification(i18n("You should update your system."), i18np("There is %1 security update available.", "There are %1 security updates available.", security_updates==0), "dialog-warning");
+      const int non_security_updates = updates - security_updates;
+      if(non_security_updates==0) {
+        show_update_notification(i18n("You should update your system."), i18np("There is %1 security update available.", "There are %1 security updates available.", security_updates), "dialog-warning");
       } else {
-        const QString updates_text = i18np("is: %1 update", "are: %1 updates", updates);
-        const QString security_updates_text = i18np("%1 is a security update", "%1 are security updates", security_updates);
-        show_update_notification(i18n("You should update your system."), i18nc("%1 is e.g. '3 updates'; %2 is e.g. '1 security update'", "There %1, of which %2.", updates_text, security_updates_text), "dialog-warning");
+        const QString updates_text = i18np("%1 update", "%1 updates", non_security_updates);
+        const QString security_updates_text = i18np("%1 security update", "%1 security updates", security_updates);
+        // the "count" of the i18ncp() is the number of total updates available;
+        // this eases the translation of "There is/are" for languages with more than 2 plural forms
+        show_update_notification(i18n("You should update your system."), i18ncp("%2 is e.g. '3 updates'; %3 is e.g. '1 security update'; the plural form represents the number of total updates (non-security and security ones)", "There is: %2, and %3", "There are: %2, and %3", updates, updates_text, security_updates_text), "dialog-warning");
       }
     }
       
