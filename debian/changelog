@@ -1,4 +1,4 @@
-kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
+kingston-update-notifier (1.2.2) unstable; urgency=low
 
   * src/CMakeLists.txt: Ensure minimal linking.
   * debian/source/options: Added with compression BZip2.
@@ -12,7 +12,7 @@ kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
   * debian/update-notifier-kde.lintian-overrides: Added
     (extended-description-is-probably-too-short).
 
- -- Kai Wasserbäch <curan@debian.org>  Mon, 14 Feb 2011 10:42:55 +0100
+ -- Kai Wasserbäch <curan@debian.org>  Thu, 24 Feb 2011 20:24:50 +0100
 
 kingston-update-notifier (1.2.1) unstable; urgency=low
 
