@@ -4,7 +4,11 @@ kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
   * debian/source/options: Added with compression BZip2.
   * src/notifier.cpp: Corrected the messages to the users. (Closes: #613529)
   * po/de.po: Updated German translation.
-  * debian/{compat,control}: Updated for debhelper v8.
+  * debian/compat: Raised to 8.
+  * debian/control:
+    - Updated for debhelper v8.
+    - Removed version requirement on cmake (stable has a sufficiently recent
+      CMake now).
 
  -- Kai Wasserbäch <curan@debian.org>  Mon, 14 Feb 2011 10:42:55 +0100
 
