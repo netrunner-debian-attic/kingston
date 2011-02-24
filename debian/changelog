@@ -9,6 +9,8 @@ kingston-update-notifier (1.2.2) UNRELEASED; urgency=low
     - Updated for debhelper v8.
     - Removed version requirement on cmake (stable has a sufficiently recent
       CMake now).
+  * debian/update-notifier-kde.lintian-overrides: Added
+    (extended-description-is-probably-too-short).
 
  -- Kai Wasserbäch <curan@debian.org>  Mon, 14 Feb 2011 10:42:55 +0100
 
