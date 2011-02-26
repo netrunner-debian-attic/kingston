@@ -1,3 +1,9 @@
+kingston-update-notifier (1.2.3) UNRELEASED; urgency=low
+
+  * debian/rules: Added "--parallel" to dh invocation.
+
+ -- Kai Wasserbäch <curan@debian.org>  Sat, 26 Feb 2011 12:45:54 +0100
+
 kingston-update-notifier (1.2.2) unstable; urgency=low
 
   * src/CMakeLists.txt: Ensure minimal linking.
