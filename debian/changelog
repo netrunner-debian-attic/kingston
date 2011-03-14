@@ -1,6 +1,10 @@
 kingston-update-notifier (1.2.3) UNRELEASED; urgency=low
 
   * debian/rules: Added "--parallel" to dh invocation.
+  * Added Hungarian translation by Gábor Braun (Closes: #618305), consisting
+    of:
+    - po/hu.po
+    - Updates to kingston-update-notifier.{desktop,notifyrc}
 
  -- Kai Wasserbäch <curan@debian.org>  Sat, 26 Feb 2011 12:45:54 +0100
 
