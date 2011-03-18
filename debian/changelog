@@ -1,4 +1,4 @@
-kingston-update-notifier (1.2.3) UNRELEASED; urgency=low
+kingston-update-notifier (1.2.3) unstable; urgency=low
 
   * debian/rules: Added "--parallel" to dh invocation.
   * Added Hungarian translation by Gábor Braun (Closes: #618305), consisting
@@ -7,7 +7,7 @@ kingston-update-notifier (1.2.3) UNRELEASED; urgency=low
     - Updates to kingston-update-notifier.{desktop,notifyrc}
   * src/notifier.cpp: Move the "Reboot" button into the right notification.
 
- -- Kai Wasserbäch <curan@debian.org>  Sat, 26 Feb 2011 12:45:54 +0100
+ -- Kai Wasserbäch <curan@debian.org>  Fri, 18 Mar 2011 16:07:41 +0100
 
 kingston-update-notifier (1.2.2) unstable; urgency=low
 
