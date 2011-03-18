@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kingston-update-notifier 1.3\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-18 18:00+0100\n"
+"POT-Creation-Date: 2011-03-18 15:58+0100\n"
 "PO-Revision-Date: 2011-03-13 21:29+0100\n"
 "Last-Translator: Braun Gábor <braung@renyi.hu>\n"
 "Language-Team: Hungarian <debian-l10n-hu@lists.debian.org>\n"
@@ -19,29 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
-# Caption for non-security updates.
-#: src/notifier.cpp:57
-msgid "It is recommended to update your system."
-msgstr "A rendszer frissíthető."
-
-#: src/notifier.cpp:57
+#: src/notifier.cpp:64
 #, kde-format
-msgid "There is %1 update available."
-msgid_plural "There are %1 updates available."
-msgstr[0] "%1 csomag frissíthető."
-msgstr[1] "%1 csomag frissíthető."
-
-# Caption when security update is possible.
-#: src/notifier.cpp:61 src/notifier.cpp:67
-msgid "You should update your system."
-msgstr "Biztonsági frissítés ajánlott!"
-
-#: src/notifier.cpp:61
-#, kde-format
-msgid "There is %1 security update available."
-msgid_plural "There are %1 security updates available."
-msgstr[0] "%1 csomaghoz van biztonsági frissítés."
-msgstr[1] "%1 csomaghoz van biztonsági frissítés."
+msgid "%1 security update"
+msgid_plural "%1 security updates"
+msgstr[0] "%1"
+msgstr[1] "%1"
 
 #: src/notifier.cpp:63
 #, kde-format
@@ -50,12 +33,42 @@ msgid_plural "%1 updates"
 msgstr[0] "%1"
 msgstr[1] "%1"
 
-#: src/notifier.cpp:64
+#: src/notifier.cpp:93
+msgid "In order to complete this upgrade, you need to reboot your system."
+msgstr "A frissítés befejezéséhez indítsa újra a rendszert!"
+
+# Caption for non-security updates.
+#: src/notifier.cpp:57
+msgid "It is recommended to update your system."
+msgstr "A rendszer frissíthető."
+
+#: src/notifier.cpp:84 src/notifier.cpp:97
+msgctxt "Do the proposed action (upgrade, reboot, etc) later"
+msgid "Later"
+msgstr "Később"
+
+#: src/notifier.cpp:92
+msgid "Please reboot your system."
+msgstr "Kérem, indítsa újra a rendszert!"
+
+#: src/notifier.cpp:98
+msgctxt "Reboot the system"
+msgid "Reboot"
+msgstr "Újraindítás"
+
+#: src/notifier.cpp:61
 #, kde-format
-msgid "%1 security update"
-msgid_plural "%1 security updates"
-msgstr[0] "%1"
-msgstr[1] "%1"
+msgid "There is %1 security update available."
+msgid_plural "There are %1 security updates available."
+msgstr[0] "%1 csomaghoz van biztonsági frissítés."
+msgstr[1] "%1 csomaghoz van biztonsági frissítés."
+
+#: src/notifier.cpp:57
+#, kde-format
+msgid "There is %1 update available."
+msgid_plural "There are %1 updates available."
+msgstr[0] "%1 csomag frissíthető."
+msgstr[1] "%1 csomag frissíthető."
 
 #: src/notifier.cpp:67
 #, kde-format
@@ -67,20 +80,7 @@ msgid_plural "There are: %2, and %3"
 msgstr[0] "%3 csomag biztonsági, %2 pedig egyéb okból frissíthető."
 msgstr[1] "%3 csomag biztonsági, %2 pedig egyéb okból frissíthető."
 
-#: src/notifier.cpp:83 src/notifier.cpp:96
-msgctxt "Do the proposed action (upgrade, reboot, etc) later"
-msgid "Later"
-msgstr "Később"
-
-#: src/notifier.cpp:84
-msgctxt "Reboot the system"
-msgid "Reboot"
-msgstr "Újraindítás"
-
-#: src/notifier.cpp:92
-msgid "Please reboot your system."
-msgstr "Kérem, indítsa újra a rendszert!"
-
-#: src/notifier.cpp:93
-msgid "In order to complete this upgrade, you need to reboot your system."
-msgstr "A frissítés befejezéséhez indítsa újra a rendszert!"
+# Caption when security update is possible.
+#: src/notifier.cpp:61 src/notifier.cpp:67
+msgid "You should update your system."
+msgstr "Biztonsági frissítés ajánlott!"

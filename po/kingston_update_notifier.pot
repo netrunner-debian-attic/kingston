@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-18 18:00+0100\n"
+"POT-Creation-Date: 2011-03-18 15:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,14 +64,9 @@ msgid_plural "There are: %2, and %3"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/notifier.cpp:83 src/notifier.cpp:96
+#: src/notifier.cpp:84 src/notifier.cpp:97
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
-msgstr ""
-
-#: src/notifier.cpp:84
-msgctxt "Reboot the system"
-msgid "Reboot"
 msgstr ""
 
 #: src/notifier.cpp:92
@@ -80,4 +75,9 @@ msgstr ""
 
 #: src/notifier.cpp:93
 msgid "In order to complete this upgrade, you need to reboot your system."
+msgstr ""
+
+#: src/notifier.cpp:98
+msgctxt "Reboot the system"
+msgid "Reboot"
 msgstr ""

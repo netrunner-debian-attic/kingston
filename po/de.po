@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kingston-update-notifier 1.3\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2011-02-18 18:00+0100\n"
+"POT-Creation-Date: 2011-03-18 15:58+0100\n"
 "PO-Revision-Date: 2011-02-18 18:10+0100\n"
 "Last-Translator: Kai Wasserbäch <curan@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -41,7 +41,7 @@ msgstr "Um dieses Upgrade abzuschließen, müssen Sie Ihr System neu starten."
 msgid "It is recommended to update your system."
 msgstr "Es wird empfohlen, Ihr System zu aktualisieren."
 
-#: src/notifier.cpp:83 src/notifier.cpp:96
+#: src/notifier.cpp:84 src/notifier.cpp:97
 msgctxt "Do the proposed action (upgrade, reboot, etc) later"
 msgid "Later"
 msgstr "Später"
@@ -50,7 +50,7 @@ msgstr "Später"
 msgid "Please reboot your system."
 msgstr "Bitte starten Sie Ihr System neu."
 
-#: src/notifier.cpp:84
+#: src/notifier.cpp:98
 msgctxt "Reboot the system"
 msgid "Reboot"
 msgstr "Neustart"
