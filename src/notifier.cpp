@@ -80,8 +80,8 @@ void notifier_t::show_update_notification(const QString& title, const QString& m
   note->setText(message);
   note->setPixmap(KIcon(iconname).pixmap(QSize(32,32)));
   note->setComponentData(m_component_data);
-  note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later")
-    << i18nc("Reboot the system", "Reboot"));
+  note->setActions(QStringList()
+    << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
   note->sendEvent();
   m_upgrade_notification=note;
   return;
@@ -93,7 +93,9 @@ void notifier_t::notify_reboot() {
   note->setText(i18n("In order to complete this upgrade, you need to reboot your system."));
   note->setPixmap(KIcon("system-reboot").pixmap(QSize(32,32)));
   note->setComponentData(m_component_data);
-  note->setActions(QStringList() << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later"));
+  note->setActions(QStringList()
+    << i18nc("Do the proposed action (upgrade, reboot, etc) later", "Later")
+    << i18nc("Reboot the system", "Reboot"));
   connect(note,SIGNAL(closed()),m_reboot_nagger,SLOT(start()));
   connect(note,SIGNAL(action1Activated()),m_reboot_nagger,SLOT(start()));
   connect(note,SIGNAL(action2Activated()),SLOT(reboot()));
