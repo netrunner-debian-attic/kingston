@@ -1,3 +1,10 @@
+kingston-update-notifier (1.2.4) UNRELEASED; urgency=low
+
+  * Added French translation (only PO file), thanks to Cédric Boutillier.
+    (Closes: #620200)
+
+ -- Kai Wasserbäch <curan@debian.org>  Thu, 31 Mar 2011 12:07:06 +0200
+
 kingston-update-notifier (1.2.3) unstable; urgency=low
 
   * debian/rules: Added "--parallel" to dh invocation.
