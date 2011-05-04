@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
 Uploaders: Sune Vuorela <sune@debian.org>, Kai Wasserbäch <curan@debian.org>
 Build-Depends: debhelper (>= 8), cmake, kdelibs5-dev, kdebase-workspace-dev
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/pkg-kde/kingston.git
 Vcs-Browser: http://git.debian.org/?p=pkg-kde/kingston.git;a=summary
 

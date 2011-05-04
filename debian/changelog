@@ -2,6 +2,8 @@ kingston-update-notifier (1.2.4) UNRELEASED; urgency=low
 
   * Added French translation, thanks to Cédric Boutillier. (Closes: #620200)
   * debian/gbp.conf: Added to ensure signed tags.
+  * debian/control: Bumped Standards-Version to 3.9.2, no further changes
+    needed.
 
  -- Kai Wasserbäch <curan@debian.org>  Thu, 31 Mar 2011 12:07:06 +0200
 
