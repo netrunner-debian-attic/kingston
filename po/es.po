@@ -1,7 +1,10 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translation for the kingston-update-notifier package.
+# Copyright (C) 2011 Rafael Belmonte
+# This file is distributed under the same license as the
+# kingston-update-notifier package.
 #
-# , 2011.
+# Rafael Belmonte <eaglescreen@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kingston-update-notifier 1.2\n"
