@@ -1,3 +1,9 @@
+kingston-update-notifier (1.2.5) UNRELEASED; urgency=low
+
+  * Added Spanish translation, thanks to Rafael Belmonte. (Closes: #651718)
+
+ -- Kai Wasserbäch <curan@debian.org>  Sun, 11 Dec 2011 19:12:53 +0100
+
 kingston-update-notifier (1.2.4) unstable; urgency=low
 
   * Added French translation, thanks to Cédric Boutillier. (Closes: #620200)

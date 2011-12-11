@@ -1,0 +1,83 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# , 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kingston-update-notifier 1.2\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-03-18 15:58+0100\n"
+"PO-Revision-Date: 2011-12-11 16:57+0100\n"
+"Last-Translator: Rafael Belmonte <EagleScreen@gmail.com>\n"
+"Language-Team: Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: src/notifier.cpp:57
+msgid "It is recommended to update your system."
+msgstr "Se recomienda actualizar su sistema."
+
+#: src/notifier.cpp:57
+#, kde-format
+msgid "There is %1 update available."
+msgid_plural "There are %1 updates available."
+msgstr[0] "Hay %1 actualización disponible."
+msgstr[1] "Hay %1 actualizaciones disponibles"
+
+#: src/notifier.cpp:61 src/notifier.cpp:67
+msgid "You should update your system."
+msgstr "Debería actualizar su sistema."
+
+#: src/notifier.cpp:61
+#, kde-format
+msgid "There is %1 security update available."
+msgid_plural "There are %1 security updates available."
+msgstr[0] "Hay %1 actualización de seguridad disponible."
+msgstr[1] "Hay %1 actualizaciones de seguridad disponibles."
+
+#: src/notifier.cpp:63
+#, kde-format
+msgid "%1 update"
+msgid_plural "%1 updates"
+msgstr[0] "%1 actualización"
+msgstr[1] "%1 actualizaciones"
+
+#: src/notifier.cpp:64
+#, kde-format
+msgid "%1 security update"
+msgid_plural "%1 security updates"
+msgstr[0] "%1 actualización de seguridad"
+msgstr[1] "%1 actualizaciones de seguridad"
+
+#: src/notifier.cpp:67
+#, kde-format
+msgctxt ""
+"%2 is e.g. '3 updates'; %3 is e.g. '1 security update'; the plural form "
+"represents the number of total updates (non-security and security ones)"
+msgid "There is: %2, and %3"
+msgid_plural "There are: %2, and %3"
+msgstr[0] "Hay: %2, y %3"
+msgstr[1] "Hay: %2, y %3"
+
+#: src/notifier.cpp:84 src/notifier.cpp:97
+msgctxt "Do the proposed action (upgrade, reboot, etc) later"
+msgid "Later"
+msgstr "Después"
+
+#: src/notifier.cpp:92
+msgid "Please reboot your system."
+msgstr "Por favor reinicie su sistema."
+
+#: src/notifier.cpp:93
+msgid "In order to complete this upgrade, you need to reboot your system."
+msgstr "Para completar esta actualización, necesita reiniciar su sistema."
+
+#: src/notifier.cpp:98
+msgctxt "Reboot the system"
+msgid "Reboot"
+msgstr "Reiniciar"
+
