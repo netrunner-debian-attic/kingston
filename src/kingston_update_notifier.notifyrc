@@ -2,26 +2,31 @@
 Icon=applications-other
 Comment=Update notification daemon
 Comment[de]=Aktualisierungs-Benachrichtigungs-Daemon
+Comment[es]=Demonio de notificación de actualizaciones
 Comment[fr]=Démon de notification de mises à jour
 Comment[hu]=Frissítésfigyelő szolgáltatás
 Name=Update notification daemon
 Name[de]=Aktualisierungs-Benachrichtigungs-Daemon
+Name[es]=Demonio de notificación de actualizaciones
 Name[fr]=Démon de notification de mises à jour
 Name[hu]=Frissítésfigyelő szolgáltatás
 
 [Context/info]
 Name=Information
 Name[de]=Information
+Name[es]=Información
 Name[fr]=Informations
 Name[hu]=Értesítés
 Comment=Used for update information
 Comment[de]=Für Aktualisierungsinformationen verwandt.
+Comment[es]=Usado para la información de actualización
 Comment[fr]=Utilisé pour les informations de mises à jour.
 Comment[hu]=Frissítésekről értesít.
 
 [Event/updatesavailable]
 Name=Available updates
 Name[de]=Verfügbare Aktualisierungen
+Name[es]=Actualizaciones disponibles
 Name[fr]=Mises à jour disponibles
 Name[hu]=Elérhető frissítések
 Contexts=info
@@ -30,6 +35,7 @@ Action=Popup
 [Event/requestreboot]
 Name=Update notifier
 Name[de]=Aktualisierungs-Notifier
+Name[es]=Notificador de actualizaciones
 Name[fr]=Notification de mises à jour
 Name[hu]=Frissítésfigyelő
 Contexts=info

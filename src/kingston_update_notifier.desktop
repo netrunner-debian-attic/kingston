@@ -1,10 +1,12 @@
 [Desktop Entry]
 Name=Update notifier
 Name[de]=Aktualisierungs-Notifier
+Name[es]=Notificador de actualizaciones
 Name[hu]=Frissítésfigyelő
 Type=Service
 Comment=Notifies user when there are updates available
 Comment[de]=Benachrichtigt den Benutzer, wenn Aktualisierungen verfügbar sind.
+Comment[es]=Notifica al usuario cuando hay actualizaciones disponibles
 Comment[hu]=Értesít, ha a rendszer frissíthető.
 Comment[fr]=Prévient l'utilisateur lorsque des mises à jour sont disponibles.
 X-KDE-ServiceTypes=KDEDModule
