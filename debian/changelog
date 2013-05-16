@@ -1,6 +1,11 @@
 kingston-update-notifier (1.2.5) UNRELEASED; urgency=low
 
+  [ Kai Wasserbäch ]
   * Added Spanish translation, thanks to Rafael Belmonte. (Closes: #651718)
+
+  [ Felix Geyer ]
+  * Build-depend on kde-workspace-dev instead of the transitional package
+    kdebase-workspace-dev.
 
  -- Kai Wasserbäch <curan@debian.org>  Sun, 11 Dec 2011 19:12:53 +0100
 
